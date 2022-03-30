@@ -1,11 +1,11 @@
 const express =require('express');
+const app = express();
 const path = require ('path');
 const cors = require('cors');
 const bodyParser =  require('body-parser');
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://chhama:parmar@cluster0.fznjr.mongodb.net/signupANDsingin?retryWrites=true&w=majority");
 const indexRouter = require ('./routes/index');
-const app = express();
 
 app.use(cors());
 
