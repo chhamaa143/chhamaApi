@@ -5,7 +5,7 @@ exports.signup=(request,response)=>{
     let email=request.body.email;
     let password=request.body.password;
     let mobile=request.body.mobile;
-
+    console.log(request.body);
     User.create({
         username:username,
         email:email,
