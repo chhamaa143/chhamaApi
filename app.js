@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
-const port = process.env.PORT || 3000;s
+const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log("server started");
 });
