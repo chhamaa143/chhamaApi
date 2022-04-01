@@ -1,4 +1,6 @@
+const { request } = require('express');
 const User=require('../model/user.model');
+const caategory=require('../model/category.model');
 exports.signup=(request,response)=>{
     
     let username=request.body.username;
@@ -33,4 +35,19 @@ exports.signin=(request,response)=>{
         return response.status(500).json({message:"Oops!something went wrong"});
 
     });
+}
+
+exports.addcategory=(request,response)=>{
+    user.findOne({
+        name:request.body.name,
+        image:request.body.image
+    })
+    .then(result=>{
+        console.log(result)
+        return response.status(200).json(result);
+    })
+    .catch(err=>{
+        console.log(err);
+        return response.status(500).json({message:"Somethin went wrong"})
+    })
 }

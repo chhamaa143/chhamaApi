@@ -8,15 +8,15 @@ mongoose.connect("mongodb+srv://chhama:parmar@cluster0.fznjr.mongodb.net/signupA
 app.use(cors());
 
 const indexRouter = require ('./routes/index');
-
+const categoryRoute = require('./routes/category');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
+app.use('/category',categoryRoute);
+
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log("server started");
 });
-// module.exports=app;
